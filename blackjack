@@ -1,0 +1,161 @@
+#Making a blackjack game; this time, with classes.
+
+import random
+import sys
+
+# Creating the class for the values of blackjack cards.
+
+class card1:
+	value = random.randint(1, 13)
+	if value == 11:
+		value = 10
+	elif value == 12:
+		value = 10
+	elif value == 13:
+		value = 10
+	if value == 1:
+		value == 11
+
+class card2:
+	value = random.randint(1, 13)
+	if value == 11:
+		value = 10
+	elif value == 12:
+		value = 10
+	elif value == 13:
+		value = 10
+	if value == 1:
+		value == 11
+class card3:
+	value = random.randint(1, 13)
+	if value == 11:
+		value = 10
+	elif value == 12:
+		value = 10
+	elif value == 13:
+		value = 10
+	if value == 1:
+		value == 11
+class card4:
+	value = random.randint(1, 13)
+	if value == 11:
+		value = 10
+	elif value == 12:
+		value = 10
+	elif value == 13:
+		value = 10
+	if value == 1:
+		value == 11
+class card5:
+	value = random.randint(1, 13)
+	if value == 11:
+		value = 10
+	elif value == 12:
+		value = 10
+	elif value == 13:
+		value = 10
+	if value == 1:
+		value == 11
+class card6:
+	value = random.randint(1, 13)
+	if value == 11:
+		value = 10
+	elif value == 12:
+		value = 10
+	elif value == 13:
+		value = 10
+	if value == 1:
+		value == 11
+class card1:
+	value = random.randint(1, 13)
+	if value == 11:
+		value = 10
+	elif value == 12:
+		value = 10
+	elif value == 13:
+		value = 10
+	if value == 1:
+		value == 11
+# Setting the objects to the class.
+playerCardOne = card1()
+playerCardTwo = card2()
+playerCardThree = card3()
+playerTotalValue = int(playerCardOne.value) + int(playerCardTwo.value)
+playerChips = input("How much would you like to buy in for? (Maximum 1000)")
+
+dealerCardOne = card4()
+dealerCardTwo = card5()
+dealerCardThree = card6()
+dealerTotalValue = int(dealerCardOne.value) + int(dealerCardTwo.value)
+
+
+#Now to consider the logic of the game. The player gets two cards. We have to consider the properties of how the ace card works. 
+
+playerBet = input("What's your bet?")
+playerChips = int(playerChips) - int(playerBet)
+if playerChips < 0:
+	print("ERROR! You aren't rich enough!")
+
+	
+
+while True:
+	if playerCardOne.value == 11 and playerCardTwo.value == 11:
+		playerTotalValue == 12
+		continue
+	if playerTotalValue <= 21:
+		playerTotalValue = playerCardOne.value + playerCardTwo.value
+		print(playerTotalValue)
+		hit = input("Would you like to hit? ")
+		if hit == "yes":
+			print("Okay, hit registered.")
+			print("Your third card value is: ")
+			print(playerCardThree.value)
+			if playerTotalValue + playerCardThree.value > 21:
+				print("You busted.")
+				playerChips = int(playerChips) - int(playerBet)
+				exit()
+			else:
+				if dealerTotalValue > playerTotalValue:
+					print("You lose")
+					playerChips = playerChips - playerBet
+					exit()
+				if dealerTotalValue == playerTotalValue:
+					print("It's a draw")
+					playerChips = int(playerChips) + int(playerBet)
+					exit()
+				if playerTotalValue > dealerTotalValue:
+					print("You win")
+					playerChips = int(playerChips) + int(playerBet * 2)
+					exit()
+		if hit == "no":
+			dealerTotalValue == dealerTotalValue +dealerCardThree.value
+			if dealerTotalValue < 17:
+				dealerTotalValue == dealerTotalValue + dealerCardThree.value
+			if dealerTotalValue < playerTotalValue:
+				print("You win")
+				playerChips = int(playerChips) + int(playerBet * 2)
+				exit()
+			if dealerTotalValue == playerTotalValue:
+				print("It's a draw")
+				playerChips = int(playerChips) + int(playerBet)
+				exit()
+			else:
+				print("You lost")
+				exit()
+			
+				
+	if playerTotalValue == 21:
+		print("Blackjack")
+		playerTotalValue = playerBet * (12/5) + playerTotalValue
+		continue
+	
+		
+		
+	
+		
+		
+# If two aces show up then it has to be a 12. 
+
+
+	
+	
